@@ -87,16 +87,17 @@ struct MealListView: View {
                                 Image(systemName: "checkmark")
                             }
                         }
+                        .contentShape(Rectangle()) // This makes the entire row tappable
                         .onTapGesture {
                             meals[index].selectedItem = item
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading) // Ensures the HStack fills the width of the row
                     }
                 }
             }
         }
     }
 }
+
 
 
 struct ContentView: View {
