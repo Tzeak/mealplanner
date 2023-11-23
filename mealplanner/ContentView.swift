@@ -209,21 +209,12 @@ struct ContentView: View {
 }
 
 
-let breakfastMeals = [
+let meals = [
     Meal(name: "Pancakes", ingredients: [Ingredient(name: "Flour", quantity: 1, unit: "cup"), Ingredient(name: "Eggs", quantity: 2, unit: "items")], selectedItem: false, type: .breakfast),
-    Meal(name: "Omelette", ingredients: [Ingredient(name: "Eggs", quantity: 2, unit: "items"), Ingredient(name: "Cheese", quantity: 1, unit: "slice")], selectedItem: false, type: .breakfast)
-    // Add more breakfast meals
-]
-
-
-let lunchMeals = [
+    Meal(name: "Omelette", ingredients: [Ingredient(name: "Eggs", quantity: 2, unit: "items"), Ingredient(name: "Cheese", quantity: 1, unit: "slice")], selectedItem: false, type: .breakfast),
     Meal(name: "Sandwich", ingredients: [Ingredient(name: "Bread", quantity: 2, unit: "slices"), Ingredient(name: "Cheese", quantity: 1, unit: "slice")], selectedItem: false, type: .lunch),
-    Meal(name: "Salad", ingredients: [Ingredient(name: "Lettuce", quantity: 1, unit: "cup"), Ingredient(name: "Tomato", quantity: 1, unit: "item")], selectedItem: false, type: .lunch)
+    Meal(name: "Salad", ingredients: [Ingredient(name: "Lettuce", quantity: 1, unit: "cup"), Ingredient(name: "Tomato", quantity: 1, unit: "item")], selectedItem: false, type: .lunch),
     // Add more lunch meals
-]
-
-
-let dinnerMeals = [
     Meal(name: "Pizza", ingredients: [Ingredient(name: "Pizza Dough", quantity: 1, unit: "piece"), Ingredient(name: "Cheese", quantity: 100, unit: "g")], selectedItem: false, type: .dinner),
     Meal(name: "Pasta", ingredients: [Ingredient(name: "Pasta", quantity: 200, unit: "g"), Ingredient(name: "Tomato Sauce", quantity: 1, unit: "cup")], selectedItem: false, type: .dinner)
     // Add more dinner meals
@@ -231,24 +222,14 @@ let dinnerMeals = [
 
 // Sample data for testing
 let sampleDays: [Day] = [
-    Day(name: "Monday", meals: breakfastMeals + lunchMeals + dinnerMeals),
-    Day(name: "Tuesday", meals: breakfastMeals + lunchMeals + dinnerMeals),
-    // ... Repeat for other days
+    Day(name: "Monday", meals: meals),
+    Day(name: "Tuesday", meals: meals),
+    Day(name: "Wednesday", meals: meals),
+    Day(name: "Thursday", meals: meals),
+    Day(name: "Friday", meals: meals),
+    Day(name: "Saturday", meals: meals),
+    Day(name: "Sunday", meals: meals)
 ]
-//
-//// Sample data for testing
-//let sampleDays: [Day] = [
-//
-//    
-//    Day(name: "Monday", meals: [breakfastMeals[0], lunchMeals[0], dinnerMeals[0]]),
-//        Day(name: "Tuesday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        Day(name: "Wednesday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        Day(name: "Thursday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        Day(name: "Friday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        Day(name: "Saturday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        Day(name: "Sunday", meals: [breakfastMeals[1], lunchMeals[1], dinnerMeals[1]]),
-//        
-//    ]
 
 
 #Preview {
