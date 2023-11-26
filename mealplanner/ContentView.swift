@@ -89,6 +89,7 @@ struct SelectedMealsView: View {
     var body: some View {
         List(combineIngredients(), id: \.name) { ingredient in
             Text("\(ingredient.totalQuantity) of \(ingredient.name)")
+                
         }
         .navigationTitle("Ingredients to Buy")
     }
@@ -202,11 +203,30 @@ struct MealItemView: View {
 
 
 
+
+
 struct ContentView: View {
     var body: some View {
-        DayListView(days: sampleDays)
+        TabView {
+            // Tab for the Recipes
+            DayListView(days: sampleDays)
+                .tabItem {
+                    Label("Week", systemImage: "calendar")
+                }
+
+            // Tab for the Shopping List (assuming you have a view for this)
+            SelectedMealsView(days: sampleDays) // Replace with your actual Shopping List view
+                .tabItem {
+            
+                    Label("Shopping List", systemImage: "cart")
+                
+                }
+            
+            
+        }
     }
 }
+
 
 
 let meals = [
