@@ -39,7 +39,7 @@ enum MealType: String {
 }
 
 struct DayListView: View {
-    @State var days: [Day] // Your days data
+    @Binding var days: [Day] // Your days data
     @State private var showSelectedMeals = false
 
     var body: some View {
@@ -206,16 +206,17 @@ struct MealItemView: View {
 
 
 struct ContentView: View {
+    @State var days = sampleDays;
     var body: some View {
         TabView {
             // Tab for the Recipes
-            DayListView(days: sampleDays)
+            DayListView(days: $days)
                 .tabItem {
                     Label("Week", systemImage: "calendar")
                 }
 
             // Tab for the Shopping List (assuming you have a view for this)
-            SelectedMealsView(days: sampleDays) // Replace with your actual Shopping List view
+            SelectedMealsView(days: days) // Replace with your actual Shopping List view
                 .tabItem {
             
                     Label("Shopping List", systemImage: "cart")
